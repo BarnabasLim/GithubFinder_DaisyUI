@@ -1,0 +1,6 @@
+Step 1: Setup Tailwind and install Daisy UI
+    resource: https://tailwindcss.com/docs/guides/create-react-app
+    -follow steps for Tailwind using link
+    -npm i daisyui
+    -in tailwind.config.js plugins:[require('daisyui')],
+    

@@ -3,4 +3,16 @@ Step 1: Setup Tailwind and install Daisy UI
     -follow steps for Tailwind using link
     -npm i daisyui
     -in tailwind.config.js plugins:[require('daisyui')],
+
+
+Step 2: Create React Routes and Navbar
+    -install react-router-dom v6
+    -https://www.w3schools.com/react/react_router.asp
+    -npm i react-router-dom react-icons
+    -create components/layout/Navbar.jsx
+    -in App.js
+    import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+    // enclose everything in Router
+    //encoutes Route with Routes
+    //each Route will have element attribute
     

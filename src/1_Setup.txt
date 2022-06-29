@@ -18,3 +18,15 @@ Step 2: Create React Routes and Navbar
     
 Step 3: Create Footer
     -get current date using new Date().getFullYear()
+
+Step 4: Create React Routes
+
+Step 5: Github API
+    set up github api authorisation key
+    settings>Developer settings>Personal access tokens>generate new key
+    creat .env file in root folder
+    create
+    REACT_APP_GITHUB_URL
+    REACT_APP_GITHUB_TOKEN
+    can be accessed using 
+    process.env.REACT_APP_GITHUB_TOKEN

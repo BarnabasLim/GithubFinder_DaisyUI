@@ -30,3 +30,58 @@ Step 5: Github API
     REACT_APP_GITHUB_TOKEN
     can be accessed using 
     process.env.REACT_APP_GITHUB_TOKEN
+
+Step 6: setUp context to seperate Model from View
+    6.1 create ./src/context/github/githubContext.js
+        import {createContext, useState} from "react"
+
+        //1. Create context
+        const GithubContext=createContext();
+        //Global Variables
+        ...
+
+        //2. Create Provider
+        export const GithubProvider=({childre})=>{
+            //2.1 Entity States
+            const [users, setUsers]=useState([])
+            const [loading, setLoading]=useState(true)
+
+            //2.2 Entity Functions
+            const fetchUsers=async()=>{
+                const response=await fetch(...)
+                const data=await response.json()
+                setUsers(data)
+                setLoading(false)
+            }
+
+            //2.3 Create Context Provider for the Context
+            return(
+                <GithubContext.provider
+                    value={{
+                        users,
+                        loading,
+                        fetchUsers,
+                    }}
+                >
+                </GithubContext.provider>
+            )
+        }
+
+        export default GithubContext
+        
+        6.2 in App.js Wrap Context provider around children that needs to access install
+        in App.js
+
+        import {GithubProvider} from '../context/github/githubContext'
+
+        function App(){
+            ...
+            return(
+                <GithubProvider>
+                    ...
+                </GithubProvider>
+            )
+        }
+         
+        6.3 now all children has access to the data by using useContext(GithubContext)
+        note: GithubContext needs to be imported

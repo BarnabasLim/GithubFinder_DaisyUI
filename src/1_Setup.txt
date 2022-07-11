@@ -12,9 +12,9 @@ Step 2: Create React Routes and Navbar
     -create components/layout/Navbar.jsx
     -in App.js
     import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-    // 1.enclose everything in Router
-    // 2.encoutes Route with Routes
-    // 3.each Route will have element attribute
+    // 1.enclose everything in <Router>
+    // 2.encolose <Route> with <Routes>
+    // 3.each Route will have element={<Component/>} attribute
     
 Step 3: Create Footer
     -get current date using new Date().getFullYear()
